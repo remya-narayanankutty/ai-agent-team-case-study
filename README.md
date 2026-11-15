@@ -1,50 +1,48 @@
-# Running a D2C Brand with a Team of AI Agents
+# Remya Narayanankutty
 
-Remya Narayanankutty | Founder and CEO, Belong India
+Founder building and running an autonomous AI agent team for a D2C brand.
+
+I use AI to run the growth, content and operations of Belong India, a direct-to-consumer bedding brand. This repository collects the case studies. Each one covers the problem, what I built, how AI was used (workflow, agent or loop, and the guardrails around it), what went wrong, and what changed. I show results only as trends or ratios, and only when they are meaningful.
 
 Watch the 2.5 minute overview: https://youtu.be/LU_knsT7xwA
 
-## The problem
+## AI agents
 
-Belong India is a direct-to-consumer bedding brand serving shoppers in India. The business is profitable and runs on a small team, but its organic reach was small, and growth had to come without paid marketing. Content and social media are the two levers that compound over time, and both need daily consistency that a founder with limited weekly hours cannot supply by hand.
+| Case study | In one line |
+|---|---|
+| [The operating model](case-studies/agents/agent-team-operating-model.md) | How a team of agents is organised, supervised and kept safe |
+| [Mercury, the daily blog agent](case-studies/agents/mercury-daily-blog-agent.md) | A mandate, a quality gate, and a monthly strategy cycle |
+| [Venus, the social agent](case-studies/agents/venus-social-agent.md) | An autonomous agent that learns from its own results, with guardrails in code |
 
-I treated it as a management problem, not a tooling problem. The question was how to hand daily content and social work to AI agents and still stay accountable for everything published under the brand's name.
+## AI-assisted store work
 
-## What I built
+| Case study | In one line |
+|---|---|
+| [Letting AI change a live store safely](case-studies/store-work/safe-ai-changes-to-a-live-store.md) | Draft, verify, approve, publish, commit |
+| [Structured data and technical SEO](case-studies/store-work/structured-data-and-technical-seo.md) | A schema layer shipped safely through a draft theme |
+| [On-page SEO at scale](case-studies/store-work/on-page-seo-through-the-store-api.md) | An audit-and-fix routine run through the store API |
+| [Site speed: every product image](case-studies/store-work/site-speed-product-images.md) | An audit, then an automated compress-and-replace pipeline |
+| [Size-aware merchandising](case-studies/store-work/size-aware-merchandising-automation.md) | Fit and stock handled per size, automatically |
+| [A reusable homepage update skill](case-studies/store-work/reusable-hero-update-skill.md) | One spec in, a reviewed banner out |
+| [A measurement framework](case-studies/store-work/measurement-framework.md) | Trustworthy numbers for a small store |
 
-A small org of agents with clear reporting lines, built on Claude Code:
+## Progression
 
-- **Mercury** writes and publishes one SEO blog post a day.
-- **Venus** designs, publishes and measures one Instagram and Facebook post a day, and learns from the numbers.
-- **Cospian Dave**, a chief of staff agent, triggers the others, reviews their output and briefs me.
+| Date | What was added | Lesson |
+|---|---|---|
+| 2026-04 | SEO foundations: headings, titles, descriptions, image text, removal of leftover metadata | Fix fundamentals once, under one terminology rule |
+| 2026-05 | A site-speed pass: every product image audited, compressed and re-uploaded with image text | Measure first, then automate the repetitive fix |
+| 2026-05 | A structured-data layer shipped through a draft theme | Validate before you publish |
+| 2026-06 | A safe change workflow for the live store, with the theme under version control | Never edit live, and make every change reversible |
+| 2026-06 | Size-aware merchandising and sold-out pruning | Fit and stock are per size |
+| 2026-06 | A reusable homepage update skill | Automate the chore you repeat |
+| 2026-06 | A measurement framework with a single trusted metric | Choose the metric that cannot be inflated |
+| 2026-06 | A margin model for stacked discounts | Model the worst case, and diagnose before blaming price |
+| 2026-10-09 | Mercury, a daily blog agent with a mandate and a quality gate | A missed day beats a broken post |
+| 2026-10-10 | An org standard for agents, work and conversation modes, a monthly strategy cycle | Separate what to achieve from how |
+| 2026-10-25 | Venus, an autonomous social agent with guardrails enforced in code | Safety lives outside the agent's own judgment |
+| 2026-10-26 | Reels as a tested format, capped until a test shows they win | Treat plausible ideas as hypotheses |
+| 2026-10-27 | Capabilities restricted in code, first supervised post, image route fixed | Test the full path before automating |
+| 2026-10-29 | Stories switch on by a rule the agent checks itself | Explicit conditions let an agent decide |
 
-Every agent has the same five parts: a definition, a mandate that only I can change, state files so each run knows what already happened, a notes file for my guidance, and a strategy the agent writes and owns. I can talk to any agent one-on-one. In that mode it discusses and drafts but takes no action unless I explicitly ask.
-
-## Guardrails
-
-Venus publishes with no per-post approver, so the rules had to be strong enough to stand in for one. They are enforced in code where possible, not only in instructions:
-
-- The publish script rejects captions containing banned punctuation, duplicate captions, and posts over the daily cap.
-- A single `PAUSE` file stops all publishing instantly.
-- Venus's only store capability is uploading its own post images. The script contains only those calls, so a misread instruction cannot reach anything else.
-- Each agent has a quality gate. If it fails and cannot be fixed, the agent skips the day or saves a hidden draft. A missed day beats a bad post.
-- Agents may not invent statistics, testimonials or discounts, make health claims, or name competitors.
-
-## How the agents learn
-
-I set the outcomes. The agents decide how to reach them.
-
-- **Monthly strategy cycle.** Each agent pulls a baseline, writes 3 to 5 testable bets, works to them for 30 days, then gives each bet a verdict: keep, tweak or drop. It may make at most two changes per cycle, so results stay attributable.
-- **Weekly learning loop (Venus).** Every post is scored, with shares and saves weighted above likes. Tests run one variable at a time, with at least 4 posts per arm. A variant wins only if its median beats the other by 25% and at least 3 of 4 posts beat the other arm's median. Otherwise the verdict is "no difference yet".
-- **Honesty rules.** No number is used unless a command produced it. Unavailable metrics are written as unavailable.
-
-## What went wrong and what I changed
-
-- Mercury's first definition told it to publish on every run, so opening a chat with it would have published a second post. I split each agent into work mode and conversation mode.
-- Canva's design tool returned a blank page for carousels. Venus now renders slides locally from a spec, which is deterministic and repeatable.
-- Instagram rejected every image link from the store's CDN. I traced it to the fetch side and moved image staging onto Meta's own infrastructure.
-
-## Who decided what
-
-I made the strategic calls: the mission, the objectives, the guardrails, which capabilities each agent gets, and when to turn a format on. The agents execute inside those limits, run their own experiments, and report to me. Every agent's output goes out under the brand's name, so I spot-check it.
-
+Full details, including what went wrong, are in [CHANGELOG.md](CHANGELOG.md).
