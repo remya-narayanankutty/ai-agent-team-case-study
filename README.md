@@ -2,6 +2,8 @@
 
 Remya Narayanankutty | Founder and CEO, Belong India
 
+Watch the 2.5 minute overview: https://youtu.be/LU_knsT7xwA
+
 ## The problem
 
 Belong India is a direct-to-consumer bedding brand serving shoppers in India. The business is profitable and runs on a small team, but its organic reach was small, and growth had to come without paid marketing. Content and social media are the two levers that compound over time, and both need daily consistency that a founder with limited weekly hours cannot supply by hand.
