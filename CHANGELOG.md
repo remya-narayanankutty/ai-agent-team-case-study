@@ -2,6 +2,21 @@
 
 How the agent team has progressed, newest first. Each entry says what changed, why, and what I learned. Results appear only when they are meaningful, and then as trends or ratios.
 
+## 2026-11-19: MyVayu is reviewed, fixed and ready to launch
+**What changed:** A separate reviewer tested MyVayu from a written brief. Two rounds of fixes closed ten defects, then wording and saved-letter fixes followed. I added strict transport security, a launch screen for the installed app, a privacy page in English and Hindi, and a project email address that forwards to my inbox.
+**Why:** A public health tool has to be correct before it is widely shared. A privacy page and a contact address make the product credible to users, funders and app stores.
+**Learned:** An independent reviewer finds what the builder cannot. And a hosting provider's helpful feature can quietly break a page: it rewrote my contact address until I built the link in the browser.
+
+## 2026-11-16: Design, data and wording decisions for MyVayu
+**What changed:** Plain-language levels with icons replaced the official category names on the main card, with the official name kept beside them. The cigarette card went from about 890 to about 290 pixels on a phone. The world ranking moved from a hand-picked city list to the United Nations list of the 150 largest cities. Clean air got its own effects page and letters. The app went live on its own domain.
+**Why:** Numbers and colours people cannot read at a glance do not raise awareness. A ranking has to be reproducible, and a page cannot call air acceptable and then list cancers.
+**Learned:** Ask how a number was chosen. Preview options at real size. Measure the page instead of trusting it.
+
+## 2026-11-14: MyVayu, a free air quality app, from idea to first version
+**What changed:** I started MyVayu: a single-page, no-account app for India, in English and Hindi, that combines a school air flag, a pollution reporter, ready-made letters and a cigarette-equivalent number. I chose the name, colours, logo and hosting plan, and kept the build repository private.
+**Why:** I wanted to raise awareness of air pollution with something free, safe and useful. No accounts and no server means nothing to hack and no personal data to protect.
+**Learned:** Privacy as a starting rule shapes every later choice, from storage to wording.
+
 ## 2026-10-29: Stories switch on by rule
 **What changed:** Venus began publishing a Story of each post, switching itself on once its own conditions were met: two clean posts on both platforms, a clean reel, no failures in three days, and no pause file.
 **Why:** Stories show a post to existing followers in the first hours, which helps a small account. A rule the agent checks itself kept the reel test clean, because a new feature did not start on the same day.

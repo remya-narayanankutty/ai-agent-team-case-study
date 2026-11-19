@@ -2,7 +2,7 @@
 
 Founder building and running an autonomous AI agent team for a D2C brand.
 
-I use AI to run the growth, content and operations of Belong India, a direct-to-consumer bedding brand. This repository collects the case studies. Each one covers the problem, what I built, how AI was used (workflow, agent or loop, and the guardrails around it), what went wrong, and what changed. I show results only as trends or ratios, and only when they are meaningful.
+I use AI to run the growth, content and operations of Belong India, a direct-to-consumer bedding brand. I also design and ship products with AI as a build partner. This repository collects the case studies. Each one covers the problem, what I built, how AI was used (workflow, agent or loop, and the guardrails around it), what went wrong, and what changed. I show results only as trends or ratios, and only when they are meaningful.
 
 Watch the 2.5 minute overview: https://youtu.be/LU_knsT7xwA
 
@@ -26,6 +26,12 @@ Watch the 2.5 minute overview: https://youtu.be/LU_knsT7xwA
 | [A reusable homepage update skill](case-studies/store-work/reusable-hero-update-skill.md) | One spec in, a reviewed banner out |
 | [A measurement framework](case-studies/store-work/measurement-framework.md) | Trustworthy numbers for a small store |
 
+## AI-built products
+
+| Case study | In one line |
+|---|---|
+| [MyVayu, a free air quality app for India](case-studies/apps/myvayu-free-air-quality-app.md) | A no-account app built in short design loops, tested by an independent reviewer, and launched with a privacy page |
+
 ## Progression
 
 | Date | What was added | Lesson |
@@ -44,5 +50,8 @@ Watch the 2.5 minute overview: https://youtu.be/LU_knsT7xwA
 | 2026-10-26 | Reels as a tested format, capped until a test shows they win | Treat plausible ideas as hypotheses |
 | 2026-10-27 | Capabilities restricted in code, first supervised post, image route fixed | Test the full path before automating |
 | 2026-10-29 | Stories switch on by a rule the agent checks itself | Explicit conditions let an agent decide |
+| 2026-11-14 | MyVayu, a free no-account air quality app for India, built with an AI build partner | Privacy as a starting rule shapes every later choice |
+| 2026-11-16 | Plain-language air levels with icons, a phone-first layout, and a ranking based on a published source | Preview at real size and cite your sources |
+| 2026-11-19 | An independent review, two rounds of fixes, a privacy page and launch setup | An independent reviewer finds what the builder cannot |
 
 Full details, including what went wrong, are in [CHANGELOG.md](CHANGELOG.md).
