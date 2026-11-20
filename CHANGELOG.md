@@ -2,6 +2,11 @@
 
 How the agent team has progressed, newest first. Each entry says what changed, why, and what I learned. Results appear only when they are meaningful, and then as trends or ratios.
 
+## 2026-11-20: MyVayu shows one number, on the scale people already read
+**What changed:** I compared the app with a popular one for Mumbai. Mine showed 98 in light green and theirs showed 157. The air data agreed within a few percent, but I had used India's official bands on a 24-hour average and they used the US scale on the current hour. After researching which scale leading platforms use, I decided on a single number people can check elsewhere. MyVayu now uses the US scale on the latest hour, and Mumbai reads the same as the other app. I also added rising smoke to the cigarette drawings.
+**Why:** An accurate number that looks wrong next to the app people already trust loses trust. One number is easier to read than two, and the choice needed evidence, not a guess.
+**Learned:** Check your numbers side by side with the tools your users already use. A difference can be a correct number on a different scale, and the fix is to choose one scale deliberately and say so.
+
 ## 2026-11-19: MyVayu is reviewed, fixed and ready to launch
 **What changed:** A separate reviewer tested MyVayu from a written brief. Two rounds of fixes closed ten defects, then wording and saved-letter fixes followed. I added strict transport security, a launch screen for the installed app, a privacy page in English and Hindi, and a project email address that forwards to my inbox.
 **Why:** A public health tool has to be correct before it is widely shared. A privacy page and a contact address make the product credible to users, funders and app stores.

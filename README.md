@@ -53,5 +53,6 @@ Watch the 2.5 minute overview: https://youtu.be/LU_knsT7xwA
 | 2026-11-14 | MyVayu, a free no-account air quality app for India, built with an AI build partner | Privacy as a starting rule shapes every later choice |
 | 2026-11-16 | Plain-language air levels with icons, a phone-first layout, and a ranking based on a published source | Preview at real size and cite your sources |
 | 2026-11-19 | An independent review, two rounds of fixes, a privacy page and launch setup | An independent reviewer finds what the builder cannot |
+| 2026-11-20 | One AQI number on the scale people already read, after a side-by-side check against a popular app | Test your numbers against the apps people trust |
 
 Full details, including what went wrong, are in [CHANGELOG.md](CHANGELOG.md).

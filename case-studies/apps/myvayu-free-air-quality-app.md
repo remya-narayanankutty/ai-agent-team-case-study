@@ -14,7 +14,7 @@ I wanted a tool anyone could use in ten seconds: free, no account, in English an
 ## What I built
 A single web page that works like an app and installs to the phone's home screen.
 
-- Today's air for any place, from modelled estimates, on India's own AQI scale.
+- Today's air for any place, from modelled estimates, on the US AQI scale that most air quality apps show.
 - A plain-language level with an icon and one sentence on what it means for people.
 - A cigarette-equivalent number, as a way to make the particle level easy to feel, with the method shown and a clear note that it is a rough comparison.
 - A world ranking against the 150 largest cities.
@@ -34,7 +34,7 @@ There are no accounts, no ads, and no server of my own holding personal data.
 I worked with an AI coding assistant as a build partner, in short loops. For each change the assistant proposed options, showed them visually, built the chosen one, and measured the result in a phone-sized browser before I saw it.
 
 - **Naming and look.** I chose the name, the colours and the logo direction. The assistant generated options and redrew them until they worked at small size.
-- **Making numbers understandable.** Official India names such as "Moderate" and "Very Poor" read alike. I replaced them with six plain words and icons, Clean, Acceptable, Caution, Unhealthy, Dangerous and Hazardous, and kept the official name visible beside each.
+- **Making numbers understandable.** Official category names read alike. I replaced them with six plain words and icons, Clean, Acceptable, Caution, Unhealthy, Dangerous and Hazardous, each with a one-line meaning.
 - **Fitting a phone screen.** The first cigarette card was taller than a whole phone screen. I asked for it to be redesigned, and it went from about 890 pixels to about 290. The same pass shortened the AQI card and tightened the page so the key number sits on the first screen.
 - **Sources over memory.** The first world ranking used a list of cities the assistant picked from memory. I asked how they had been chosen, the honest answer was "by judgment", and I had them replaced with the United Nations list of the 150 largest cities, with every coordinate taken from the source file.
 
@@ -55,6 +55,7 @@ The review produced two rounds of fixes, ten defects in all, plus a third group 
 Each round went in as a separate change with a plain description of every fix, so the repository history reads as an audit trail.
 
 ## What went wrong and what I changed
+- **A number that did not match the apps people trust.** I checked Mumbai against IQAir. My app showed 98 in light green, and IQAir showed 157. The air data agreed within a few percent. The difference was the scale (mine used India's official bands and a 24-hour average) and the time window (IQAir shows the current hour). I had the assistant research which scale leading platforms use, and I decided the app must show one number that people can verify elsewhere. It now uses the US scale on the latest hour, and Mumbai reads the same as IQAir.
 - **A claim that was not true.** The footer said location was rounded, but the app sent exact coordinates. The assistant flagged it while we rewrote the text. We fixed the code first, and then kept the sentence.
 - **A promise I could not keep.** "We do not track you" came out of the footer once I added visit counting. The privacy text now says only what is true.
 - **Content that contradicted itself.** Clean air showed long-term illness lists. I rebuilt that page for clean air.
@@ -68,7 +69,7 @@ Each round went in as a separate change with a plain description of every fix, s
 - **Guardrails:** a private repository, a read-only reviewer who could not change code, strict security headers, and a rule that every health or privacy statement must match what the code does.
 - **Human checkpoints:** I approved every design, every wording choice, each data source, and every push to the live site. I created the domain, hosting and email accounts myself. The assistant never held a password.
 - **How it improved:** an independent review found defects the builder missed. My questions, such as "how did you choose these cities?", pushed the work from convenient to defensible.
-- **My role:** I set the principles, which were privacy first, no accounts, India's own scale and honesty over drama. I chose the names, the icons, what to show and hide, and when to launch.
+- **My role:** I set the principles, which were privacy first, no accounts, one number people can check against other apps, and honesty over drama. I chose the names, the icons, what to show and hide, and when to launch.
 
 ## What I would do next
 Add offline support, a small hourly data job so a busy day cannot overwhelm the data service, and an Android listing. I will add results here once there is enough real usage to say something meaningful.
