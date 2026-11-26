@@ -2,6 +2,16 @@
 
 How the agent team has progressed, newest first. Each entry says what changed, why, and what I learned. Results appear only when they are meaningful, and then as trends or ratios.
 
+## 2026-11-26: MyVayu is submitted to Google Play for closed testing
+**What changed:** I packaged the web app for Android as a Trusted Web Activity, after adding offline support, a new icon and proof that the app belongs to my domain. The location button failed inside the app, so a hidden check screen was built to show what the phone saw. It traced the fault to a missing build setting. I deferred that fix and submitted the closed test, which is now in review.
+**Why:** A store listing is a second way to reach people. Google requires a testing period before public release, and the app already offers search by city while location is being fixed.
+**Learned:** When you cannot see the fault, build the thing that shows it. And decide which defects can wait for an update, so the longest wait starts early.
+
+## 2026-11-23: Two corrections to MyVayu after launch
+**What changed:** I removed the modelled ozone estimate from the headline number. Adding it had fixed a reviewer's finding, then pushed one city far above what a popular app showed. Ozone now appears as a short note. The app also shows a brief refresh every time it opens.
+**Why:** The number must be checkable. A screen that never visibly changes is read as out of date, even when it is correct.
+**Learned:** Test a fix against more than the case that prompted it. How a result looks is part of whether people believe it.
+
 ## 2026-11-20: MyVayu shows one number, on the scale people already read
 **What changed:** I compared the app with a popular one for Mumbai. Mine showed 98 in light green and theirs showed 157. The air data agreed within a few percent, but I had used India's official bands on a 24-hour average and they used the US scale on the current hour. After researching which scale leading platforms use, I decided on a single number people can check elsewhere. MyVayu now uses the US scale on the latest hour, and Mumbai reads the same as the other app. I also added rising smoke to the cigarette drawings.
 **Why:** An accurate number that looks wrong next to the app people already trust loses trust. One number is easier to read than two, and the choice needed evidence, not a guess.

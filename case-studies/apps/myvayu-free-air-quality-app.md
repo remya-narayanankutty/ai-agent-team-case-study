@@ -12,7 +12,7 @@ India's air pollution is a public health problem that most people cannot see or 
 I wanted a tool anyone could use in ten seconds: free, no account, in English and Hindi, safe to use, and honest about what the numbers mean. The first goal was awareness. I also wanted it to cost nothing to run, so it could stay alive without funding.
 
 ## What I built
-A single web page that works like an app and installs to the phone's home screen.
+A single web page that works like an app and installs to the phone's home screen, now also packaged for Android. The Android version was submitted to Google Play for closed testing on 26 November 2026 and is in review.
 
 - Today's air for any place, from modelled estimates, on the US AQI scale that most air quality apps show.
 - A plain-language level with an icon and one sentence on what it means for people.
@@ -26,7 +26,7 @@ There are no accounts, no ads, and no server of my own holding personal data.
 ## How it works
 **Design.** The app is one static file hosted on Cloudflare Pages from a private GitHub repository. Air data comes from a free public weather and air quality service. Everything the user saves, such as the log, the chosen place and saved letters, stays in the phone's own storage.
 
-**Honest by design.** In clean air, the app shows no cigarette counts and switches to a "keep it clean" version of the letters and the effects page. A page headed "acceptable air" that listed lung cancer and heart failure was wrong, so those lines show only where the air is actually polluted.
+**Honest by design.** In clean air, the app shows no cigarette counts and switches to a "keep it clean" version of the letters and the effects page. A page headed "acceptable air" that listed lung cancer and heart failure was wrong, so those lines show only where the air is actually polluted. People with clean air still looked for the cigarette card and were confused when it was missing, so it now shows a cigarette inside a no-smoking sign.
 
 **Safe by design.** The site has a strict content security policy and security headers. Location is rounded to about one kilometre before it is used. The privacy page says exactly what leaves the phone and what does not.
 
@@ -56,6 +56,8 @@ Each round went in as a separate change with a plain description of every fix, s
 
 ## What went wrong and what I changed
 - **A number that did not match the apps people trust.** I checked Mumbai against IQAir. My app showed 98 in light green, and IQAir showed 157. The air data agreed within a few percent. The difference was the scale (mine used India's official bands and a 24-hour average) and the time window (IQAir shows the current hour). I had the assistant research which scale leading platforms use, and I decided the app must show one number that people can verify elsewhere. It now uses the US scale on the latest hour, and Mumbai reads the same as IQAir.
+- **A fix that broke another city.** A reviewer flagged that ozone was missing from the number, and we added it. It improved one city, then pushed Mumbai well above 200 on an afternoon when IQAir showed about 170. Re-running that day's data showed the gap came entirely from the model's ozone estimate. I took ozone out of the number and kept it as a short note, because a figure that cannot be checked against ground monitors should not drive the headline.
+- **A correct screen that looked stale.** The reading changes hourly, so a reopened app often looked identical, and people read that as old data. I asked for a one-second refresh on every open, with the numbers counting up. The screen claims no new reading where there is none.
 - **A claim that was not true.** The footer said location was rounded, but the app sent exact coordinates. The assistant flagged it while we rewrote the text. We fixed the code first, and then kept the sentence.
 - **A promise I could not keep.** "We do not track you" came out of the footer once I added visit counting. The privacy text now says only what is true.
 - **Content that contradicted itself.** Clean air showed long-term illness lists. I rebuilt that page for clean air.
@@ -63,13 +65,20 @@ Each round went in as a separate change with a plain description of every fix, s
 - **A contact address that vanished.** The hosting provider rewrote my email address on the privacy page into "[email protected]" and the restoring script was blocked by my own security policy. The link is now built in the browser.
 - **Tooling slips.** One style rule resized every icon in a card because it was too broad. Another edit failed because the file used Windows line endings. Measuring the real page found both.
 
+## Taking it to Android
+I packaged the web app for Google Play as a Trusted Web Activity, a thin Android shell around the live site, so one change to the site reaches both. It first needed offline support, an icon that survives Android's cropping, and a file on my domain proving the app belongs to it.
+
+**The location bug.** "Use my location" worked on the website and failed inside the app. I had no developer tools connected to the phone, so I asked the assistant for a way it could see what the phone saw. It built a hidden check screen: five taps on the tagline show the permission state and the exact error. Two screenshots gave the answer. The request was refused in 15 milliseconds, far too fast for a person to have refused it, and the app had never been given the right to ask. The fix is a rebuild with that setting. I chose to ship the closed test first, because search by city works and the testing period is the longest wait.
+
+**Store declarations.** Google's forms are legal statements in my name. The assistant filled them in my signed-in browser from answers I approved, stopped where a question did not fit the app, and sent nothing for review until I said yes.
+
 ## How AI was used
 - **Pattern:** a build loop with me as product owner. The assistant proposes, builds and measures. I decide.
-- **Autonomy:** the assistant writes and tests code, drafts copy in two languages, designs icons and generates the privacy text. It stops before anything that touches an account or the public.
+- **Autonomy:** the assistant writes and tests code, drafts copy in two languages, designs icons and generates the privacy text. It asks before anything that touches an account or the public.
 - **Guardrails:** a private repository, a read-only reviewer who could not change code, strict security headers, and a rule that every health or privacy statement must match what the code does.
-- **Human checkpoints:** I approved every design, every wording choice, each data source, and every push to the live site. I created the domain, hosting and email accounts myself. The assistant never held a password.
+- **Human checkpoints:** I approved every design, every wording choice, each data source, every push to the live site, and the store submission. I created the domain, hosting, email and developer accounts myself. The assistant never held a password.
 - **How it improved:** an independent review found defects the builder missed. My questions, such as "how did you choose these cities?", pushed the work from convenient to defensible.
 - **My role:** I set the principles, which were privacy first, no accounts, one number people can check against other apps, and honesty over drama. I chose the names, the icons, what to show and hide, and when to launch.
 
 ## What I would do next
-Add offline support, a small hourly data job so a busy day cannot overwhelm the data service, and an Android listing. I will add results here once there is enough real usage to say something meaningful.
+Fix location inside the Android app, finish the closed test and apply for public release, add the Hindi store listing, and add a small hourly data job so a busy day cannot overwhelm the data service. I will add results here once there is enough real usage to say something meaningful.
