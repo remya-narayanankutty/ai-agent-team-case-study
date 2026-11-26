@@ -30,7 +30,7 @@ Watch the 2.5 minute overview: https://youtu.be/LU_knsT7xwA
 
 | Case study | In one line |
 |---|---|
-| [MyVayu, a free air quality app for India](case-studies/apps/myvayu-free-air-quality-app.md) | A no-account app built in short design loops, tested by an independent reviewer, launched with a privacy page, and submitted to Google Play for closed testing |
+| [MyVayu, a free air quality app for India](case-studies/apps/myvayu-free-air-quality-app.md) | A no-account app built in short design loops, tested by an independent reviewer, launched with a privacy page, and now in closed testing on Google Play |
 
 ## Progression
 
@@ -55,6 +55,6 @@ Watch the 2.5 minute overview: https://youtu.be/LU_knsT7xwA
 | 2026-11-19 | An independent review, two rounds of fixes, a privacy page and launch setup | An independent reviewer finds what the builder cannot |
 | 2026-11-20 | One AQI number on the scale people already read, after a side-by-side check against a popular app | Test your numbers against the apps people trust |
 | 2026-11-23 | Modelled ozone taken out of the headline number, and a visible refresh on every open | A fix needs testing beyond the case that prompted it |
-| 2026-11-26 | MyVayu submitted to Google Play for closed testing, after offline support and an on-phone diagnosis of a location bug | When you cannot see the fault, build the thing that shows it |
+| 2026-11-26 | MyVayu in closed testing on Google Play, after offline support and an on-phone diagnosis of a location bug | When you cannot see the fault, build the thing that shows it |
 
 Full details, including what went wrong, are in [CHANGELOG.md](CHANGELOG.md).

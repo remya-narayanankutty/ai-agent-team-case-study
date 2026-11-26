@@ -12,7 +12,7 @@ India's air pollution is a public health problem that most people cannot see or 
 I wanted a tool anyone could use in ten seconds: free, no account, in English and Hindi, safe to use, and honest about what the numbers mean. The first goal was awareness. I also wanted it to cost nothing to run, so it could stay alive without funding.
 
 ## What I built
-A single web page that works like an app and installs to the phone's home screen, now also packaged for Android. The Android version was submitted to Google Play for closed testing on 26 November 2026 and is in review.
+A single web page that works like an app and installs to the phone's home screen, now also packaged for Android. Google approved the Android version on Google Play, and its closed test is now live.
 
 - Today's air for any place, from modelled estimates, on the US AQI scale that most air quality apps show.
 - A plain-language level with an icon and one sentence on what it means for people.

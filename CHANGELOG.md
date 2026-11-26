@@ -2,8 +2,8 @@
 
 How the agent team has progressed, newest first. Each entry says what changed, why, and what I learned. Results appear only when they are meaningful, and then as trends or ratios.
 
-## 2026-11-26: MyVayu is submitted to Google Play for closed testing
-**What changed:** I packaged the web app for Android as a Trusted Web Activity, after adding offline support, a new icon and proof that the app belongs to my domain. The location button failed inside the app, so a hidden check screen was built to show what the phone saw. It traced the fault to a missing build setting. I deferred that fix and submitted the closed test, which is now in review.
+## 2026-11-26: MyVayu is in closed testing on Google Play
+**What changed:** I packaged the web app for Android as a Trusted Web Activity, after adding offline support, a new icon and proof that the app belongs to my domain. The location button failed inside the app, so a hidden check screen was built to show what the phone saw. It traced the fault to a missing build setting. I deferred that fix and submitted the closed test, which Google has approved and which is now live.
 **Why:** A store listing is a second way to reach people. Google requires a testing period before public release, and the app already offers search by city while location is being fixed.
 **Learned:** When you cannot see the fault, build the thing that shows it. And decide which defects can wait for an update, so the longest wait starts early.
 
